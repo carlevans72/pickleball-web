@@ -93,6 +93,15 @@ a:focus-visible {
   height: auto;
 }
 
+.kofi-widget {
+  min-height: 44px;
+  margin-top: 16px;
+}
+
+.kofi-widget iframe {
+  max-width: 100%;
+}
+
 .site-footer {
   display: flex;
   min-height: 72px;
