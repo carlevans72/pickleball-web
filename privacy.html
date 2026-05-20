@@ -35,7 +35,11 @@
         >
       </a>
       <a class="close-link" href="index.html" aria-label="Back to PickleballFlow home">
-        <span aria-hidden="true">&times;</span>
+        <svg class="home-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M3 11.5 12 4l9 7.5"></path>
+          <path d="M5.5 10.5V20h13v-9.5"></path>
+          <path d="M9.5 20v-6h5v6"></path>
+        </svg>
       </a>
     </header>
 
@@ -126,7 +130,19 @@
 
     <footer class="site-footer" aria-label="Site links">
       <a href="index.html">Home</a>
+      <span class="footer-separator" aria-hidden="true">.</span>
       <a href="mailto:carl@pickleballflow.app">Say hello</a>
     </footer>
+
+    <script>
+      const legalHeader = document.querySelector('.legal-header');
+
+      function updateHeaderSize() {
+        legalHeader.classList.toggle('is-compact', window.scrollY > 24);
+      }
+
+      updateHeaderSize();
+      window.addEventListener('scroll', updateHeaderSize, { passive: true });
+    </script>
   </body>
 </html>
