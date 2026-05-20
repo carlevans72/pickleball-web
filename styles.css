@@ -128,6 +128,16 @@ a:focus-visible {
   font-size: 0.92rem;
 }
 
+.site-footer::after {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  height: 24px;
+  content: "";
+  background: inherit;
+}
+
 .site-footer a {
   color: var(--color-muted);
 }
