@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Website Privacy Policy | PickleballFlow</title>
+    <meta
+      name="description"
+      content="PickleballFlow website privacy policy."
+    >
+    <meta name="theme-color" content="#004d85">
+
+    <meta property="og:title" content="PickleballFlow Website Privacy Policy">
+    <meta
+      property="og:description"
+      content="How the PickleballFlow website handles mailing list signups."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pickleballflow.app/privacy-web">
+    <meta property="og:image" content="https://pickleballflow.app/assets/favicon.png">
+
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/favicon.png">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="legal-header">
+      <a href="index.html" aria-label="PickleballFlow home">
+        <img
+          class="legal-logo"
+          src="assets/logo.svg"
+          alt="PickleballFlow"
+          width="818"
+          height="155"
+        >
+      </a>
+      <a class="close-link" href="index.html" aria-label="Back to PickleballFlow home">
+        <svg class="home-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M3 11.5 12 4l9 7.5"></path>
+          <path d="M5.5 10.5V20h13v-9.5"></path>
+          <path d="M9.5 20v-6h5v6"></path>
+        </svg>
+      </a>
+    </header>
+
+    <main class="legal-page">
+      <article class="legal-content">
+        <h1>Website Privacy Policy</h1>
+
+        <p class="last-updated">Last Updated: December 2025</p>
+
+        <p>This Website Privacy Policy explains how PickleballFlow ("we", "our", or "us") handles information collected through the PickleballFlow website.</p>
+
+        <h2>Mailing List Signups</h2>
+
+        <p>The PickleballFlow website includes a mailing list signup form provided by <strong>MailerLite</strong>. If you choose to sign up, we collect the information you submit through that form, such as your email address and any other details requested in the form.</p>
+
+        <p>We use this information to send you updates about PickleballFlow, including product news, availability updates, and related announcements.</p>
+
+        <h2>MailerLite</h2>
+
+        <p>MailerLite processes mailing list data on our behalf. Information submitted through the signup form is handled by MailerLite under its own privacy and data processing terms.</p>
+
+        <p>You can learn more about MailerLite's privacy practices at <a href="https://www.mailerlite.com/legal/privacy-policy">MailerLite's Privacy Policy</a>.</p>
+
+        <h2>Cookies and Tracking</h2>
+
+        <p>The MailerLite signup form may use cookies or similar technologies to provide the form, manage submissions, prevent abuse, and measure form performance.</p>
+
+        <p>We do not use website advertising trackers or sell website visitor data.</p>
+
+        <h2>Unsubscribing</h2>
+
+        <p>You can unsubscribe from PickleballFlow mailing list emails at any time by using the unsubscribe link included in those emails.</p>
+
+        <h2>Deleting Your Information</h2>
+
+        <p>If you would like us to delete your mailing list information, contact us at <a href="mailto:carl@pickleballflow.app">carl@pickleballflow.app</a>.</p>
+
+        <h2>Changes to This Policy</h2>
+
+        <p>We may update this Website Privacy Policy from time to time. Changes will be posted on this page with an updated "Last Updated" date.</p>
+
+        <h2>Contact Us</h2>
+
+        <p>If you have questions or concerns about this Website Privacy Policy, please contact us at:</p>
+        <p><strong>Email:</strong> <a href="mailto:carl@pickleballflow.app">carl@pickleballflow.app</a></p>
+      </article>
+    </main>
+
+    <script>
+      const legalHeader = document.querySelector('.legal-header');
+
+      function updateHeaderSize() {
+        legalHeader.classList.toggle('is-compact', window.scrollY > 24);
+      }
+
+      updateHeaderSize();
+      window.addEventListener('scroll', updateHeaderSize, { passive: true });
+    </script>
+  </body>
+</html>
