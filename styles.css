@@ -78,7 +78,6 @@ a:focus-visible {
   display: grid;
   width: min(100%, 720px);
   justify-items: center;
-  padding: 56px 0;
   text-align: center;
 }
 
@@ -92,6 +91,7 @@ a:focus-visible {
   max-width: 36rem;
   margin: 28px 0 18px;
   color: var(--color-navy);
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: clamp(1.2rem, 1rem + 0.8vw, 1.5rem);
   font-weight: 600;
   letter-spacing: 0;
@@ -112,13 +112,13 @@ a:focus-visible {
   height: auto;
 }
 
-.kofi-widget {
-  min-height: 44px;
-  margin-top: 16px;
+.waitlist-form {
+  width: 100%;
+  margin-top: 0;
 }
 
-.kofi-widget iframe {
-  max-width: 100%;
+.waitlist-form .ml-embedded {
+  width: 100%;
 }
 
 .legal-header {
@@ -284,9 +284,6 @@ a:focus-visible {
     right: 48px;
   }
 
-  .hero {
-    padding: 72px 0;
-  }
 }
 
 @media (max-width: 420px) {
@@ -295,16 +292,12 @@ a:focus-visible {
   }
 
   .page-shell {
-    padding-top: 68px;
+    padding: 24px;
   }
 
   .hero-contact {
     top: 18px;
     right: 18px;
-  }
-
-  .hero {
-    padding: 40px 0;
   }
 
   .brand-logo {
