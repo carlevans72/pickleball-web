@@ -4,8 +4,8 @@
   --color-coral: #f85849;
   --color-light-blue: #e6f2ff;
   --color-white: #ffffff;
-  --color-text: #000000;
-  --color-muted: #666666;
+  --color-text: var(--color-navy);
+  --color-muted: rgba(0, 77, 133, 0.72);
   --color-border: #e0e0e0;
   --focus-ring: 0 0 0 4px rgba(35, 202, 187, 0.35);
   --legal-header-height: 96px;
@@ -24,7 +24,7 @@ body {
   margin: 0;
   color: var(--color-text);
   background: var(--color-white);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.5;
 }
 
@@ -57,7 +57,7 @@ a:focus-visible {
   position: relative;
   display: grid;
   min-height: 100svh;
-  padding: 24px;
+  padding: 56px 24px 24px;
   place-items: center;
 }
 
@@ -91,7 +91,6 @@ a:focus-visible {
   max-width: 36rem;
   margin: 28px 0 18px;
   color: var(--color-navy);
-  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: clamp(1.2rem, 1rem + 0.8vw, 1.5rem);
   font-weight: 600;
   letter-spacing: 0;
@@ -119,6 +118,115 @@ a:focus-visible {
 
 .waitlist-form .ml-embedded {
   width: 100%;
+}
+
+.play-store-gallery {
+  width: min(100%, 980px);
+  margin-top: 42px;
+}
+
+.gallery-intro {
+  width: min(100%, 560px);
+  margin: 0 auto 20px;
+}
+
+.gallery-intro h2 {
+  margin: 0;
+  color: var(--color-navy);
+  font-size: clamp(1.25rem, 1.05rem + 0.7vw, 1.6rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.gallery-intro p {
+  margin: 8px 0 0;
+  color: var(--color-text);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.waitlist-form .ml-form-embedContainer,
+.waitlist-form .ml-form-embedContainer p,
+.waitlist-form .ml-form-embedContainer span,
+.waitlist-form .ml-form-embedContainer a,
+.waitlist-form .ml-form-embedContainer input,
+.waitlist-form .ml-form-embedContainer button {
+  color: var(--color-text) !important;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+}
+
+.waitlist-form .ml-form-embedContainer p {
+  margin-block: 0 1rem !important;
+}
+
+.waitlist-form .ml-form-embedContainer input {
+  font-weight: 400 !important;
+}
+
+.waitlist-form .ml-form-embedContainer button {
+  font-weight: 700 !important;
+}
+
+.waitlist-form .ml-form-embedContainer .ml-form-formContent input.form-control {
+  color: var(--color-text) !important;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+}
+
+.waitlist-form .ml-form-embedContainer .ml-form-embedSubmit button.primary {
+  color: var(--color-white) !important;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+}
+
+#mlb2-41689572.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent input.form-control {
+  color: var(--color-text) !important;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+}
+
+.waitlist-form #mlb2-41689572.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-block-form .ml-form-embedSubmit button.primary {
+  color: var(--color-white) !important;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+}
+
+.waitlist-form .ml-form-embedPermissions p,
+.waitlist-form .ml-form-embedPermissions span,
+.waitlist-form .ml-form-embedPermissions a {
+  font-size: 0.875rem !important;
+  line-height: 1.55 !important;
+}
+
+.screenshot-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.screenshot-list li {
+  min-width: 0;
+}
+
+.screenshot-list img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  background: var(--color-white);
+  box-shadow:
+    0 20px 42px rgba(0, 77, 133, 0.16),
+    0 0 0 1px rgba(0, 77, 133, 0.08);
 }
 
 .legal-header {
@@ -236,7 +344,7 @@ a:focus-visible {
 
 .legal-content p,
 .legal-content li {
-  color: #222222;
+  color: var(--color-text);
   font-size: 1rem;
 }
 
@@ -276,14 +384,30 @@ a:focus-visible {
 
 @media (min-width: 768px) {
   .page-shell {
-    padding: 48px;
+    padding: 88px 48px 48px;
   }
 
   .hero-contact {
-    top: 32px;
-    right: 48px;
+    top: 34px;
+    right: max(48px, calc((100vw - 1040px) / 2 + 48px));
   }
 
+  .hero {
+    width: min(100%, 1040px);
+  }
+
+  .play-store-gallery {
+    margin-top: 52px;
+  }
+
+  .gallery-intro {
+    margin-bottom: 24px;
+  }
+
+  .screenshot-list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+  }
 }
 
 @media (max-width: 420px) {
@@ -296,8 +420,10 @@ a:focus-visible {
   }
 
   .hero-contact {
-    top: 18px;
-    right: 18px;
+    position: static;
+    justify-self: center;
+    margin-top: 28px;
+    order: 2;
   }
 
   .brand-logo {
@@ -310,6 +436,30 @@ a:focus-visible {
 
   .tagline span {
     display: inline;
+  }
+
+  .play-store-gallery {
+    margin-top: 32px;
+  }
+
+  .gallery-intro {
+    margin-bottom: 16px;
+  }
+
+  .gallery-intro p {
+    font-size: 0.96rem;
+  }
+
+  .screenshot-list {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .screenshot-list img {
+    border-radius: 6px;
+    box-shadow:
+      0 12px 28px rgba(0, 77, 133, 0.14),
+      0 0 0 1px rgba(0, 77, 133, 0.07);
   }
 
   .legal-header {
