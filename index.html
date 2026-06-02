@@ -65,7 +65,6 @@
   </head>
   <body>
     <main class="page-shell" aria-labelledby="site-title">
-      <a class="hero-contact" href="mailto:carl@pickleballflow.app">Say hello</a>
       <section class="hero">
         <img
           class="brand-logo"
@@ -95,7 +94,12 @@
         <div class="waitlist-form">
           <div class="ml-embedded" data-form="wZC4HI"></div>
         </div>
-        <section class="play-store-gallery" aria-labelledby="play-store-gallery-title">
+        <a class="scroll-cue" href="#play-store-gallery" aria-label="See app screenshots">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </a>
+        <section class="play-store-gallery" id="play-store-gallery" aria-labelledby="play-store-gallery-title">
           <div class="gallery-intro">
             <h2 id="play-store-gallery-title">Built for open play and social sessions.</h2>
             <p>Manage courts, balance rotations and keep games moving smoothly.</p>
@@ -186,6 +190,21 @@
         </section>
       </section>
     </main>
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <a href="/" aria-label="PickleballFlow home">
+          <img class="site-footer-logo" src="assets/logo.svg" alt="PickleballFlow" width="818" height="155">
+        </a>
+        <nav class="site-footer-nav" aria-label="Footer">
+          <a href="mailto:carl@pickleballflow.app">Say hello</a>
+          <span class="site-footer-sep" aria-hidden="true"></span>
+          <a href="support.html">Support</a>
+          <span class="site-footer-sep" aria-hidden="true"></span>
+          <a href="privacy.html">Privacy</a>
+        </nav>
+        <p class="site-footer-copy">&copy; 2025 PickleballFlow</p>
+      </div>
+    </footer>
     <script>
       (function () {
         var carousel = document.querySelector("[data-carousel]");
