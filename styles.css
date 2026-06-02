@@ -77,6 +77,7 @@ a:focus-visible {
 .hero {
   display: grid;
   width: min(100%, 720px);
+  min-width: 0;
   justify-items: center;
   text-align: center;
 }
@@ -122,6 +123,7 @@ a:focus-visible {
 
 .play-store-gallery {
   width: min(100%, 980px);
+  min-width: 0;
   margin-top: 42px;
 }
 
@@ -205,28 +207,118 @@ a:focus-visible {
   line-height: 1.55 !important;
 }
 
-.screenshot-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.screenshot-list li {
-  min-width: 0;
-}
-
-.screenshot-list img {
-  display: block;
+/* One screenshot in focus at a time — identical behaviour at every width. */
+.screenshot-carousel {
+  position: relative;
   width: 100%;
+  min-width: 0;
+  /* Width of the focused screenshot; arrows are positioned from this too. */
+  --shot-w: min(74vw, 300px);
+}
+
+.screenshot-track {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.screenshot-track::-webkit-scrollbar {
+  display: none;
+}
+
+.screenshot-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  padding: 8px 0 4px;
+  scroll-snap-align: center;
+}
+
+.screenshot-slide img {
+  display: block;
+  width: var(--shot-w);
   height: auto;
-  border-radius: 8px;
+  border-radius: 12px;
   background: var(--color-white);
+  box-shadow: 0 0 0 1px rgba(0, 77, 133, 0.05);
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: var(--color-white);
+  color: var(--color-navy);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
   box-shadow:
-    0 20px 42px rgba(0, 77, 133, 0.16),
+    0 8px 20px rgba(0, 77, 133, 0.22),
     0 0 0 1px rgba(0, 77, 133, 0.08);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.carousel-arrow span {
+  margin-top: -3px;
+}
+
+/* Sit just outside the focused screenshot, but never closer than 4px to the
+   carousel edge (so they can't be clipped on narrow screens). */
+.carousel-arrow--prev {
+  right: min(calc(50% + var(--shot-w) / 2 + 10px), calc(100% - 48px));
+}
+
+.carousel-arrow--next {
+  left: min(calc(50% + var(--shot-w) / 2 + 10px), calc(100% - 48px));
+}
+
+.carousel-arrow:hover {
+  transform: translateY(-50%) scale(1.05);
+}
+
+/* Edge state stays clickable (clamped no-op) so clicks never fall through
+   to the screenshot behind the button. */
+.carousel-arrow.is-edge {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(0, 77, 133, 0.22);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.carousel-dot.is-active {
+  background: var(--color-navy);
+  transform: scale(1.3);
 }
 
 .legal-header {
@@ -403,11 +495,6 @@ a:focus-visible {
   .gallery-intro {
     margin-bottom: 24px;
   }
-
-  .screenshot-list {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 20px;
-  }
 }
 
 @media (max-width: 420px) {
@@ -450,16 +537,13 @@ a:focus-visible {
     font-size: 0.96rem;
   }
 
-  .screenshot-list {
-    grid-template-columns: 1fr;
-    gap: 12px;
+  .screenshot-carousel {
+    --shot-w: min(78vw, 280px);
   }
 
-  .screenshot-list img {
-    border-radius: 6px;
-    box-shadow:
-      0 12px 28px rgba(0, 77, 133, 0.14),
-      0 0 0 1px rgba(0, 77, 133, 0.07);
+  .screenshot-slide img {
+    border-radius: 10px;
+    box-shadow: 0 0 0 1px rgba(0, 77, 133, 0.05);
   }
 
   .legal-header {
