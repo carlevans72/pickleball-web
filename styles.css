@@ -507,7 +507,7 @@ a:focus-visible {
   display: block;
   width: 140px;
   height: auto;
-  opacity: 0.72;
+  opacity: 0.9;
   transition: opacity 0.2s ease;
 }
 
