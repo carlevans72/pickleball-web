@@ -101,6 +101,14 @@ a:focus-visible {
   display: block;
 }
 
+.store-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
 .store-link {
   display: inline-flex;
   border-radius: 6px;
@@ -108,17 +116,17 @@ a:focus-visible {
 
 .store-badge {
   display: block;
-  width: min(180px, 52vw);
-  height: auto;
+  width: auto;
 }
 
-.waitlist-form {
-  width: 100%;
-  margin-top: 0;
+.store-badge--app-store {
+  height: clamp(44px, 12.5vw, 52px);
 }
 
-.waitlist-form .ml-embedded {
-  width: 100%;
+/* Google's badge carries built-in padding, so it runs taller to match
+   the App Store badge's visual height. */
+.store-badge--google-play {
+  height: clamp(64px, 18vw, 76px);
 }
 
 .play-store-gallery {
@@ -146,65 +154,6 @@ a:focus-visible {
   color: var(--color-text);
   font-size: 1rem;
   line-height: 1.5;
-}
-
-.waitlist-form .ml-form-embedContainer,
-.waitlist-form .ml-form-embedContainer p,
-.waitlist-form .ml-form-embedContainer span,
-.waitlist-form .ml-form-embedContainer a,
-.waitlist-form .ml-form-embedContainer input,
-.waitlist-form .ml-form-embedContainer button {
-  color: var(--color-text) !important;
-  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
-  font-size: 1rem !important;
-  line-height: 1.5 !important;
-}
-
-.waitlist-form .ml-form-embedContainer p {
-  margin-block: 0 1rem !important;
-}
-
-.waitlist-form .ml-form-embedContainer input {
-  font-weight: 400 !important;
-}
-
-.waitlist-form .ml-form-embedContainer button {
-  font-weight: 700 !important;
-}
-
-.waitlist-form .ml-form-embedContainer .ml-form-formContent input.form-control {
-  color: var(--color-text) !important;
-  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
-  font-size: 1rem !important;
-  line-height: 1.5 !important;
-}
-
-.waitlist-form .ml-form-embedContainer .ml-form-embedSubmit button.primary {
-  color: var(--color-white) !important;
-  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
-  font-size: 1rem !important;
-  line-height: 1.5 !important;
-}
-
-#mlb2-41689572.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent input.form-control {
-  color: var(--color-text) !important;
-  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
-  font-size: 1rem !important;
-  line-height: 1.5 !important;
-}
-
-.waitlist-form #mlb2-41689572.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-block-form .ml-form-embedSubmit button.primary {
-  color: var(--color-white) !important;
-  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
-  font-size: 1rem !important;
-  line-height: 1.5 !important;
-}
-
-.waitlist-form .ml-form-embedPermissions p,
-.waitlist-form .ml-form-embedPermissions span,
-.waitlist-form .ml-form-embedPermissions a {
-  font-size: 0.875rem !important;
-  line-height: 1.55 !important;
 }
 
 /* One screenshot in focus at a time — identical behaviour at every width. */
