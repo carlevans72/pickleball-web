@@ -114,6 +114,9 @@ a:focus-visible {
   border-radius: 6px;
 }
 
+/* Align the official badges by height — the convention Apple's and Google's
+   guidelines call for. Google's artwork carries built-in padding, so it's set
+   taller to land on the same visible height as the App Store badge. */
 .store-badge {
   display: block;
   width: auto;
@@ -123,8 +126,6 @@ a:focus-visible {
   height: clamp(44px, 12.5vw, 52px);
 }
 
-/* Google's badge carries built-in padding, so it runs taller to match
-   the App Store badge's visual height. */
 .store-badge--google-play {
   height: clamp(64px, 18vw, 76px);
 }
