@@ -106,7 +106,7 @@ a:focus-visible {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 16px;
 }
 
 .store-link {
